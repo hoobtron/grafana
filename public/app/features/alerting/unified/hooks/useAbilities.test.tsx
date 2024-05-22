@@ -158,7 +158,7 @@ describe('AlertRule abilities', () => {
     expect(abilities.result.current).toMatchSnapshot();
   });
 
-  fit('grants correct silence permissions for folder with silence create permission', async () => {
+  it('grants correct silence permissions for folder with silence create permission', async () => {
     setFolderAccessControl({ [AccessControlAction.AlertingSilenceCreate]: false });
 
     const rule = getGrafanaRule();
@@ -170,7 +170,7 @@ describe('AlertRule abilities', () => {
     expect(abilities.result.current[AlertRuleAction.Silence]).toEqual([false, false]);
   });
 
-  fit('works out correct silences permission on folder basis 2', async () => {
+  it('works out correct silences permission on folder basis 2', async () => {
     setFolderAccessControl({ [AccessControlAction.AlertingSilenceCreate]: true });
 
     const rule = getGrafanaRule();
